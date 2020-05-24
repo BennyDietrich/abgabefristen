@@ -1,16 +1,25 @@
 from datetime import *
 
 class Subject:
-
+    """Subject objects provide:
+            - Name of the Subject
+            - Day of submission
+            - Daytime of submission
+            - Day when the next paper will be published
+            - Link to the main page of the subject"""
     def __init__ (self, name: str, submint: str, time: str, next_paper: str, link: str):
         self.__name = name
         self.__submint = submint
+        self.__time = time
         self.__next_paper = next_paper
         self.__link = link
-        self.__time = time
         self.refresh()
 
     def refresh(self):
+        """Checks if the subject has to be submitted within the next two Days.
+           If submit > 24h: 'Morgen: __time Uhr'
+           IF submit < 24h: countdown in hh:mm format
+        """
         if self.__submint == "Heute":
             now = datetime.now()
             hour = int(self.__time[:2]) - now.hour
