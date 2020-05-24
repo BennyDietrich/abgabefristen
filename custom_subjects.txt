@@ -1,0 +1,33 @@
+# Here you can add/delete custom subjects:
+#   Just add your subject to the corresponding Day on
+#   which it has to be submitted
+#   EXAMPLE:
+#     - Submission day: Monday
+#     - create a new line under Monday
+#     - Add subject information the following way *include the dollar sign*
+#       you have to add the following informations in this order:
+#
+#      - Days have to be provided as digits (0-6) <=> (Mon - Sun)
+#          SN: Subject name (Not allowed "$, <, >")
+#          PP: The day the new Paper appears
+#          LK: Link to the main page of the subject
+#          ST: Time the homework have to be submitted format: hh:mm
+#          [Example]: $_<SN>_<ST>_<PP>_<LK>
+#
+0 - Monday:
+
+1 - Tuesday:
+$<Programmieren in C++>_<12:00>_<1>_<https://ad-wiki.informatik.uni-freiburg.de/teaching/ProgrammierenCplusplusSS2020>
+
+2 - Wednesday:
+$<Algo und Data>_<16:00>_<0>_<http://ac.informatik.uni-freiburg.de/teaching/ss_20/ad-lecture.php>
+
+3 - Thursday:
+
+4 - Friday:
+$<Technische Informatik>_<17:00>_<4>_<https://ira.informatik.uni-freiburg.de/src/teach_main.php?id=223>
+
+5 - Saturday:
+$<Mathe II>_<23:00>_<4>_<https://ilias.uni-freiburg.de/ilias.php?ref_id=1531150&cmdClass=ilrepositorygui&cmdNode=ye&baseClass=ilrepositorygui>
+
+6 - Sunday:

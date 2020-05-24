@@ -1,5 +1,5 @@
 from tkinter import *
-from deadline import sub_list
+from deadline import gen_sub_list
 import webbrowser
 
 root = Tk()
@@ -17,7 +17,7 @@ def callback(url):
     webbrowser.open_new(url)
 
 def sorter():
-    sorted_list = sub_list()
+    sorted_list = gen_sub_list()
     fach_1 = Label(root, text=sorted_list[0].name, width =25, anchor = "w", fg="blue", cursor="hand2")
     fach_2 = Label(root, text=sorted_list[1].name, width =25, anchor = "w", fg="blue", cursor="hand2")
     fach_3 = Label(root, text=sorted_list[2].name, width =25, anchor = "w", fg="blue", cursor="hand2")

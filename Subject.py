@@ -2,7 +2,7 @@ from datetime import *
 
 class Subject:
 
-    def __init__ (self, name: str, submint: str, next_paper: str, link: str, time: str):
+    def __init__ (self, name: str, submint: str, time: str, next_paper: str, link: str):
         self.__name = name
         self.__submint = submint
         self.__next_paper = next_paper

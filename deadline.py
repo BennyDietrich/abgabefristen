@@ -2,43 +2,58 @@ import calendar
 from datetime import date
 from Subject import *
 
-def day_name(day: int):
-    return {
-        0 : "Montag",
-        1 : "Dienstag",
-        2 : "Mittwoch",
-        3 : "Donnerstag",
-        4 : "Freitag",
-        5 : "Samstag",
-        6 : "Sonntag"
-    }[day]
 
-def next_subject(day: int):
-    """For a value d (0 - 3) the function creates a Subject object and
-       returns it.
+def gen_sub_list():
+    """ Basicly the main function of deadline. Run this function to get a list
+        of Subject objects for all the subjects in custom_subjects.txt.
     """
-    if day == 0:
-        temp_subject = Subject("Programmieren in C++", day_diff(1), day_diff(1),
-         "https://ad-wiki.informatik.uni-freiburg.de/teaching/ProgrammierenCplusplusSS2020",
-         "12:00")
-    elif day == 1:
-        temp_subject = Subject("Algo und Data", day_diff(2), day_diff(0),
-        "http://ac.informatik.uni-freiburg.de/teaching/ss_20/ad-lecture.php",
-        "16:00")
-    elif day == 2:
-        temp_subject = Subject("Technische Informatik", day_diff(4), day_diff(4),
-        "https://ira.informatik.uni-freiburg.de/src/teach_main.php?id=223",
-        "17:00")
-    elif day == 3:
-        temp_subject = Subject("Mathe II", day_diff(5), day_diff(4),
-        "https://ilias.uni-freiburg.de/ilias.php?ref_id=1531150&cmdClass=ilrepositorygui&cmdNode=ye&baseClass=ilrepositorygui",
-        "23:00")
-    else:
-        print("ERROR")
-    return temp_subject
+    day = date.today().weekday()
+    sub_week = read_sub_file()
+    counter = 7
+    return_list = []
+    while counter > 0:
+        for subject in sub_week[day]:
+            return_list.append(subject)
+        if day == 6:
+            day = 0
+        else:
+            day += 1
+        counter -= 1
+    return return_list
+
+
+def read_sub_file():
+    """Reads the custom_subjects.txt and generates a list of Subject objects of
+       all subjects mentioned in the file.
+    """
+    sub_week = [[], # Monday
+                [], # Tuesday
+                [], # Wednesday
+                [], # Thursday
+                [], # Friday
+                [], # Saturday
+                []] # Sunday
+    with open("custom_subjects.txt") as file:
+        lines = file.readlines()
+    day = 0
+    for line in lines:
+        if line[0].isdigit():
+            day = int(line[0])
+        elif line[0] == '$':
+            line_array = (line.replace("$","")
+                          .replace("<", "")
+                          .replace(">", "")
+                          .split("_"))
+            sub_week[day].append(Subject(line_array[0], # name
+                                         day_diff(day), # submint
+                                         line_array[1], # time
+                                         day_diff(int(line_array[2])), # next_paper
+                                         line_array[3])) # link
+    return sub_week
+
 
 def day_diff(day: int):
-    """Computes the difference (in days) between a given day (0-6 -> Mo-So)
+    """Computes the difference (in days) between a given day (0-6 -> Mon-Sun)
        and the currente day and provides a informative string.
        Example: Today is Friday(4) and we want to know how many
                 days are left till next Monday(0).
@@ -57,28 +72,14 @@ def day_diff(day: int):
     else:
         return  "{} in {} Tagen".format(dayname, str(7-today+day))
 
-def sub_list():
-    """Computes which is the first subject in the list by comparing today
-       with the possible subject dates and then sets a starting point.
-       After finding the first subject the while loop generates a list
-       of Subject objects in the needed order and returns the list.
-    """
-    today = date.today().weekday()
-    if today > 5:
-        start = 0
-    elif today > 4:
-        start = 3
-    elif today > 2:
-        start = 2
-    else:
-        start = 1
-    counter = 4
-    temp_list = []
-    while counter > 0:
-        temp_list.append(next_subject(start))
-        if start == 3:
-            start = 0
-        else:
-             start += 1
-        counter -= 1
-    return temp_list
+
+def day_name(day: int):
+    return {
+        0 : "Montag",
+        1 : "Dienstag",
+        2 : "Mittwoch",
+        3 : "Donnerstag",
+        4 : "Freitag",
+        5 : "Samstag",
+        6 : "Sonntag"
+    }[day]
