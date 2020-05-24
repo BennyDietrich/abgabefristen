@@ -1,12 +1,21 @@
-# abgabefristen
+#### Deadline
+(for computer sience students of university of Freiburg im Breisgau second term)
 
-Python script which allows computer sience students of the
-university of Freiburg im Breisgau (Germany) to see for which subject they have to submit their homework next.
+Python script which generates a subject list which provides a overview of
+your subjects, the next deadline for the homework and when the next paper
+will be published.
 
-In addition to that they also see when the next paper will be
-published.
-
-Features:
+##### Features:
   - Sorted subject list (next to submit on top)
   - Count down (h:m) if the time left is below 24h
   - Hyperlinks to the main page of the subject on the subject name
+
+##### Next features:
+  - available as desktop widget (conky)
+  - Adding/deleting subjects
+  - Auto download of new papers
+
+#### How to run
+1. Install Python 3
+2. Intall Tkinter
+3. Run gui_deadline.py

@@ -39,7 +39,7 @@ def next_subject(day: int):
 
 def day_diff(day: int):
     """Computes the difference (in days) between a given day (0-6 -> Mo-So)
-       and the currente day.
+       and the currente day and provides a informative string.
        Example: Today is Friday(4) and we want to know how many
                 days are left till next Monday(0).
                 today = 4
@@ -82,8 +82,3 @@ def sub_list():
              start += 1
         counter -= 1
     return temp_list
-
-def refresh(sub_list: list):
-    for i in sub_list:
-        i.refresh()
-    return
