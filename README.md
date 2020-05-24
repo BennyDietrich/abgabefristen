@@ -9,10 +9,11 @@ will be published.
   - Sorted subject list (next to submit on top)
   - Count down (h:m) if the time left is below 24h
   - Hyperlinks to the main page of the subject on the subject name
+  - Adding/deleting subjects with custom_subjects.txt (Introduction within the file)
 
 ##### Next features:
   - available as desktop widget (conky)
-  - Adding/deleting subjects
+  - Adding/deleting subjects within the GUI
   - Auto download of new papers
 
 #### How to run
