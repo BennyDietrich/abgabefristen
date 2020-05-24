@@ -19,7 +19,7 @@ def next_subject(d):
     """
     if d == 0:
         temp_fach = Fach("Programmieren in C++", day_diff(1), day_diff(1),
-         "https://ad-wiki.informatik.uni-freiburg.de/teaching/ProgrammierenCplusplusSS2020", 
+         "https://ad-wiki.informatik.uni-freiburg.de/teaching/ProgrammierenCplusplusSS2020",
          "12:00")
     elif d == 1:
         temp_fach = Fach("Algo und Data", day_diff(2), day_diff(0),
@@ -63,7 +63,6 @@ def next_calc():
        After finding the first subject the while loop generates a list
        of Fach objects in the needed order and returns the list.
     """
-    start = 0
     today = date.today().weekday()
     if today > 5:
         start = 0
