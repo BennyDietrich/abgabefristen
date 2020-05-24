@@ -1,5 +1,5 @@
 from tkinter import *
-from abgabefristen import next_calc
+from deadline import sub_list
 import webbrowser
 
 root = Tk()
@@ -15,45 +15,45 @@ naeb.grid(row = 0, column = 2)
 
 def callback(url):
     webbrowser.open_new(url)
-    
+
 def sorter():
-    sorted_list = next_calc()
+    sorted_list = sub_list()
     fach_1 = Label(root, text=sorted_list[0].name, width =25, anchor = "w", fg="blue", cursor="hand2")
     fach_2 = Label(root, text=sorted_list[1].name, width =25, anchor = "w", fg="blue", cursor="hand2")
     fach_3 = Label(root, text=sorted_list[2].name, width =25, anchor = "w", fg="blue", cursor="hand2")
     fach_4 = Label(root, text=sorted_list[3].name, width =25, anchor = "w", fg="blue", cursor="hand2")
-    
+
     fach_1.bind("<Button-1>", lambda e: callback(sorted_list[0].link))
     fach_2.bind("<Button-1>", lambda e: callback(sorted_list[1].link))
     fach_3.bind("<Button-1>", lambda e: callback(sorted_list[2].link))
     fach_4.bind("<Button-1>", lambda e: callback(sorted_list[3].link))
-    
-    abgb_1 = Label(root, text=sorted_list[0].ab, width =20, anchor = "w")
-    abgb_2 = Label(root, text=sorted_list[1].ab, width =20, anchor = "w")
-    abgb_3 = Label(root, text=sorted_list[2].ab, width =20, anchor = "w")
-    abgb_4 = Label(root, text=sorted_list[3].ab, width =20, anchor = "w")
-    
-    naeb_1 = Label(root, text=sorted_list[0].nb, width =20, anchor = "w")
-    naeb_2 = Label(root, text=sorted_list[1].nb, width =20, anchor = "w")
-    naeb_3 = Label(root, text=sorted_list[2].nb, width =20, anchor = "w")
-    naeb_4 = Label(root, text=sorted_list[3].nb, width =20, anchor = "w")
-    
-    
+
+    abgb_1 = Label(root, text=sorted_list[0].submint, width =20, anchor = "w")
+    abgb_2 = Label(root, text=sorted_list[1].submint, width =20, anchor = "w")
+    abgb_3 = Label(root, text=sorted_list[2].submint, width =20, anchor = "w")
+    abgb_4 = Label(root, text=sorted_list[3].submint, width =20, anchor = "w")
+
+    naeb_1 = Label(root, text=sorted_list[0].next_paper, width =20, anchor = "w")
+    naeb_2 = Label(root, text=sorted_list[1].next_paper, width =20, anchor = "w")
+    naeb_3 = Label(root, text=sorted_list[2].next_paper, width =20, anchor = "w")
+    naeb_4 = Label(root, text=sorted_list[3].next_paper, width =20, anchor = "w")
+
+
     fach_1.grid(row = 1, column = 0)
     fach_2.grid(row = 2, column = 0)
     fach_3.grid(row = 3, column = 0)
     fach_4.grid(row = 4, column = 0)
-    
+
     abgb_1.grid(row = 1, column = 1)
     abgb_2.grid(row = 2, column = 1)
     abgb_3.grid(row = 3, column = 1)
     abgb_4.grid(row = 4, column = 1)
-    
+
     naeb_1.grid(row = 1, column = 2)
     naeb_2.grid(row = 2, column = 2)
     naeb_3.grid(row = 3, column = 2)
     naeb_4.grid(row = 4, column = 2)
-    
+
     root.after(10000, sorter)
 
 sorter()

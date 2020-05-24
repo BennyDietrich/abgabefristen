@@ -1,6 +1,6 @@
 import calendar
 from datetime import date
-from Fach import *
+from Subject import *
 
 def day_name(d):
     return {
@@ -14,23 +14,23 @@ def day_name(d):
     }[d]
 
 def next_subject(d):
-    """For a value d (0 - 3) the function creates a Fach object and
+    """For a value d (0 - 3) the function creates a Subject object and
        returns it.
     """
     if d == 0:
-        temp_fach = Fach("Programmieren in C++", day_diff(1), day_diff(1),
+        temp_fach = Subject("Programmieren in C++", day_diff(1), day_diff(1),
          "https://ad-wiki.informatik.uni-freiburg.de/teaching/ProgrammierenCplusplusSS2020",
          "12:00")
     elif d == 1:
-        temp_fach = Fach("Algo und Data", day_diff(2), day_diff(0),
+        temp_fach = Subject("Algo und Data", day_diff(2), day_diff(0),
         "http://ac.informatik.uni-freiburg.de/teaching/ss_20/ad-lecture.php",
         "16:00")
     elif d == 2:
-        temp_fach = Fach("Technische Informatik", day_diff(4), day_diff(4),
+        temp_fach = Subject("Technische Informatik", day_diff(4), day_diff(4),
         "https://ira.informatik.uni-freiburg.de/src/teach_main.php?id=223",
         "17:00")
     elif d == 3:
-        temp_fach = Fach("Mathe II", day_diff(5), day_diff(4),
+        temp_fach = Subject("Mathe II", day_diff(5), day_diff(4),
         "https://ilias.uni-freiburg.de/ilias.php?ref_id=1531150&cmdClass=ilrepositorygui&cmdNode=ye&baseClass=ilrepositorygui",
         "23:00")
     else:
@@ -57,11 +57,11 @@ def day_diff(day):
     else:
         return  "{} in {} Tagen".format(dayname, str(7-today+day))
 
-def next_calc():
+def sub_list():
     """Computes which is the first subject in the list by comparing today
        with the possible subject dates and then sets a starting point.
        After finding the first subject the while loop generates a list
-       of Fach objects in the needed order and returns the list.
+       of Subject objects in the needed order and returns the list.
     """
     today = date.today().weekday()
     if today > 5:
