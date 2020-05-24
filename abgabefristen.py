@@ -19,8 +19,8 @@ def next_subject(d):
     """
     if d == 0:
         temp_fach = Fach("Programmieren in C++", day_diff(1), day_diff(1),
-         ("https://ad-wiki.informatik.uni-freiburg.de/teaching/Programmieren\
-         CplusplusSS2020"), "12:00")
+         "https://ad-wiki.informatik.uni-freiburg.de/teaching/ProgrammierenCplusplusSS2020", 
+         "12:00")
     elif d == 1:
         temp_fach = Fach("Algo und Data", day_diff(2), day_diff(0),
         "http://ac.informatik.uni-freiburg.de/teaching/ss_20/ad-lecture.php",
@@ -31,8 +31,8 @@ def next_subject(d):
         "17:00")
     elif d == 3:
         temp_fach = Fach("Mathe II", day_diff(5), day_diff(4),
-        ("https://ilias.uni-freiburg.de/ilias.php?ref_id=1531150&cmdClass=\
-        ilrepositorygui&cmdNode=ye&baseClass=ilrepositorygui"), "23:00")
+        "https://ilias.uni-freiburg.de/ilias.php?ref_id=1531150&cmdClass=ilrepositorygui&cmdNode=ye&baseClass=ilrepositorygui",
+        "23:00")
     else:
         print("ERROR")
     return temp_fach
