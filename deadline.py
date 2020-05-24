@@ -2,7 +2,7 @@ import calendar
 from datetime import date
 from Subject import *
 
-def day_name(d):
+def day_name(day: int):
     return {
         0 : "Montag",
         1 : "Dienstag",
@@ -11,33 +11,33 @@ def day_name(d):
         4 : "Freitag",
         5 : "Samstag",
         6 : "Sonntag"
-    }[d]
+    }[day]
 
-def next_subject(d):
+def next_subject(day: int):
     """For a value d (0 - 3) the function creates a Subject object and
        returns it.
     """
-    if d == 0:
-        temp_fach = Subject("Programmieren in C++", day_diff(1), day_diff(1),
+    if day == 0:
+        temp_subject = Subject("Programmieren in C++", day_diff(1), day_diff(1),
          "https://ad-wiki.informatik.uni-freiburg.de/teaching/ProgrammierenCplusplusSS2020",
          "12:00")
-    elif d == 1:
-        temp_fach = Subject("Algo und Data", day_diff(2), day_diff(0),
+    elif day == 1:
+        temp_subject = Subject("Algo und Data", day_diff(2), day_diff(0),
         "http://ac.informatik.uni-freiburg.de/teaching/ss_20/ad-lecture.php",
         "16:00")
-    elif d == 2:
-        temp_fach = Subject("Technische Informatik", day_diff(4), day_diff(4),
+    elif day == 2:
+        temp_subject = Subject("Technische Informatik", day_diff(4), day_diff(4),
         "https://ira.informatik.uni-freiburg.de/src/teach_main.php?id=223",
         "17:00")
-    elif d == 3:
-        temp_fach = Subject("Mathe II", day_diff(5), day_diff(4),
+    elif day == 3:
+        temp_subject = Subject("Mathe II", day_diff(5), day_diff(4),
         "https://ilias.uni-freiburg.de/ilias.php?ref_id=1531150&cmdClass=ilrepositorygui&cmdNode=ye&baseClass=ilrepositorygui",
         "23:00")
     else:
         print("ERROR")
-    return temp_fach
+    return temp_subject
 
-def day_diff(day):
+def day_diff(day: int):
     """Computes the difference (in days) between a given day (0-6 -> Mo-So)
        and the currente day.
        Example: Today is Friday(4) and we want to know how many
@@ -82,3 +82,8 @@ def sub_list():
              start += 1
         counter -= 1
     return temp_list
+
+def refresh(sub_list: list):
+    for i in sub_list:
+        i.refresh()
+    return

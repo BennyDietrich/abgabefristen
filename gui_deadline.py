@@ -1,5 +1,5 @@
 from tkinter import *
-from deadline import sub_list
+from deadline import sub_list, refresh
 import webbrowser
 
 root = Tk()
