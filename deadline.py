@@ -45,7 +45,7 @@ def read_sub_file():
                           .replace(">", "")
                           .split("_"))
             sub_week[day].append(Subject(line_array[0], # name
-                                         day_diff(day), # submint
+                                         day_diff(day), # submit
                                          line_array[1], # time
                                          day_diff(int(line_array[2])), # next_paper
                                          line_array[3])) # link

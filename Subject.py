@@ -7,9 +7,9 @@ class Subject:
             - Daytime of submission
             - Day when the next paper will be published
             - Link to the main page of the subject"""
-    def __init__ (self, name: str, submint: str, time: str, next_paper: str, link: str):
+    def __init__ (self, name: str, submit: str, time: str, next_paper: str, link: str):
         self.__name = name
-        self.__submint = submint
+        self.__submit = submit
         self.__time = time
         self.__next_paper = next_paper
         self.__link = link
@@ -20,7 +20,7 @@ class Subject:
            If submit > 24h: 'Morgen: __time Uhr'
            IF submit < 24h: countdown in hh:mm format
         """
-        if self.__submint == "Heute":
+        if self.__submit == "Heute":
             now = datetime.now()
             hour = int(self.__time[:2]) - now.hour
             minute = int(self.__time[3:]) - now.minute
@@ -30,25 +30,25 @@ class Subject:
             if minute < 10:
                 minute = "0" + str(minute)
             if hour < 0:
-                self.__submint = "Beendet"
+                self.__submit = "Beendet"
             if hour < 10:
                 hour = "0" + str(hour)
-            if self.__submint != "Beendet":
-                self.__submint = "Noch: {}:{} (h:m)".format(hour, minute)
-        elif self.__submint == "Morgen":
-             self.__submint = "Morgen: {} Uhr".format(self.__time)
+            if self.__submit != "Beendet":
+                self.__submit = "Noch: {}:{} (h:m)".format(hour, minute)
+        elif self.__submit == "Morgen":
+             self.__submit = "Morgen: {} Uhr".format(self.__time)
 
     @property
     def name(self):
         return self.__name
 
     @property
-    def submint(self):
-        return self.__submint
+    def submit(self):
+        return self.__submit
 
-    @submint.setter
-    def submint(self, val):
-        self.__submint = val
+    @submit.setter
+    def submit(self, val):
+        self.__submit = val
 
     @property
     def next_paper(self):

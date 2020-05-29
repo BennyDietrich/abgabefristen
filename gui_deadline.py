@@ -28,10 +28,10 @@ def sorter():
     fach_3.bind("<Button-1>", lambda e: callback(sorted_list[2].link))
     fach_4.bind("<Button-1>", lambda e: callback(sorted_list[3].link))
 
-    abgb_1 = Label(root, text=sorted_list[0].submint, width =20, anchor = "w")
-    abgb_2 = Label(root, text=sorted_list[1].submint, width =20, anchor = "w")
-    abgb_3 = Label(root, text=sorted_list[2].submint, width =20, anchor = "w")
-    abgb_4 = Label(root, text=sorted_list[3].submint, width =20, anchor = "w")
+    abgb_1 = Label(root, text=sorted_list[0].submit, width =20, anchor = "w")
+    abgb_2 = Label(root, text=sorted_list[1].submit, width =20, anchor = "w")
+    abgb_3 = Label(root, text=sorted_list[2].submit, width =20, anchor = "w")
+    abgb_4 = Label(root, text=sorted_list[3].submit, width =20, anchor = "w")
 
     naeb_1 = Label(root, text=sorted_list[0].next_paper, width =20, anchor = "w")
     naeb_2 = Label(root, text=sorted_list[1].next_paper, width =20, anchor = "w")
