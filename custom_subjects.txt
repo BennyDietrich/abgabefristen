@@ -9,9 +9,9 @@
 #
 #      - Days have to be provided as digits (0-6) <=> (Mon - Sun)
 #          SN: Subject name (Not allowed "$, <, >")
+#          ST: Time the homework have to be submitted format: hh:mm
 #          PP: The day the new Paper appears
 #          LK: Link to the main page of the subject
-#          ST: Time the homework have to be submitted format: hh:mm
 #          [Example]: $_<SN>_<ST>_<PP>_<LK>
 #
 0 - Monday:
