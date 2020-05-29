@@ -1,5 +1,4 @@
 #### Deadline
-(for computer sience students of university of Freiburg im Breisgau second term)
 
 Python script which generates a subject list which provides a overview of
 your subjects, the next deadline for the homework and when the next paper
