@@ -12,22 +12,24 @@
 #          ST: Time the homework have to be submitted format: hh:mm
 #          PP: The day the new Paper appears
 #          LK: Link to the main page of the subject
-#          [Example]: $_<SN>_<ST>_<PP>_<LK>
+#          [Example]: $<SN>_<ST>_<PP>_<LK>
 #
 0 - Monday:
+$<Datenbanken>_<12:00>_<4>_<https://ilias.uni-freiburg.de/ilias.php?baseClass=ilExerciseHandlerGUI&ref_id=1832542&cmd=showOverview>
 
 1 - Tuesday:
-$<Programmieren in C++>_<12:00>_<1>_<https://ad-wiki.informatik.uni-freiburg.de/teaching/ProgrammierenCplusplusSS2020>
 
 2 - Wednesday:
-$<Algo und Data>_<16:00>_<0>_<http://ac.informatik.uni-freiburg.de/teaching/ss_20/ad-lecture.php>
+$<Logik>_<17:00>_<0>_<https://ilias.uni-freiburg.de/ilias.php?ref_id=1768743&cmd=view&cmdClass=ilrepositorygui&cmdNode=yi&baseClass=ilRepositoryGUI>
+$<Analysis>_<14:00>_<0>_<https://bwsyncandshare.kit.edu/s/BsJjtgKeW64PicM>
 
 3 - Thursday:
 
 4 - Friday:
-$<Technische Informatik>_<17:00>_<4>_<https://ira.informatik.uni-freiburg.de/src/teach_main.php?id=223>
+$<Betriebssysteme>_<12:00>_<4>_<https://abs.informatik.uni-freiburg.de>
+$<Optimierung>_<12:00>_<4>_<https://ilias.uni-freiburg.de/ilias.php?ref_id=1798277&cmdClass=ilobjcoursegui&cmdNode=yi:mm&baseClass=ilRepositoryGUI&redirectSource=ilcourseregistrationgui&cmdMode=>
+
 
 5 - Saturday:
-$<Mathe II>_<23:00>_<4>_<https://ilias.uni-freiburg.de/ilias.php?ref_id=1531150&cmdClass=ilrepositorygui&cmdNode=ye&baseClass=ilrepositorygui>
 
 6 - Sunday:
